@@ -1,0 +1,114 @@
+@import url("reset.css");
+
+@font-face{
+
+font-family: 'AlegreyaSans-Light';
+src: url('../fonts/AlegreyaSans-Light.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+
+}
+html{
+	font-family: AlegreyaSans-Light;
+}
+body{
+	font-family: AlegreyaSans-Light;
+}
+.wrapper{
+	width: 100%;
+	height: 100vh;
+	background: rgb(231,169,148);
+	background: linear-gradient(0deg, rgba(231,169,148,1) 21%, rgba(192,247,247,1) 100%);
+}
+.container{
+	width: 70%;
+	height: 100%;
+	margin: 0 auto;
+    background-color: #fff;
+    opacity: 0.7;
+	padding: 30px;
+}
+
+.h1{
+	text-align: center;
+	font-size: 40px;
+	text-transform: uppercase;
+}
+.menu{
+	margin-top: 100px;
+}
+
+* {box-sizing: border-box;}
+.search {
+  width: 300px;
+  position: relative;
+  display: inline-block;
+}
+input, button {
+  border: none;
+  outline: none;
+  border-radius: 3px;
+}
+input {
+  width: 100%;
+  height: 42px;
+  background: #F9F0DA;
+  padding-left: 15px;
+  border-radius: 50px;
+  font-family: AlegreyaSans-Light;
+  font-size: 18px;
+  padding-right: 40px;
+}
+button {
+  height: 26px;
+  width: 26px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #b0695d00;
+  cursor: pointer;
+}
+button:before {
+  content: "\f002";
+  font-family: FontAwesome;
+  color: #c18069;
+  font-size: 20px;
+}
+.menu a{
+	font-size: 30px;
+    margin: 15px;
+    display: inline-block;
+    text-decoration: none;
+	position: relative;
+	color: #000;
+}
+
+.menu a:before {
+    display: block;
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 0;
+    background: #c18069;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    left: 50%;
+    bottom: 0;
+}
+.menu a:after {
+    display: block;
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: #c18069;
+    transition: width 0.3s ease-in-out;
+    left: 50%;
+    bottom: 0;
+}
+.menu a:hover:before {
+    width: 50%;
+    left: 0;
+}
+.menu a:hover:after {
+    width: 50%;
+}

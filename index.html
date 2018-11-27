@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Табло рейсов аэропорта</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link  rel="stylesheet" href="css/fontawesome.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<h1 class="h1">Табло аэропорта</h1>
+		<div class="menu">
+		<div class="search">
+			<input type="text" name="search" placeholder="Поиск по номеру рейса"> 
+			<button type="submit"></button>
+			</div>
+			<a href="#">Вылетающие рейсы</a>
+			<a href="#">Прилетающие рейсы</a>
+		</div>
+		</div>
+		<div id="result">
+		</div>
+		<script type="text/javascript">
+		var url = 'https://api.rasp.yandex.net/v3.0/schedule/?apikey=d9f48ede-1554-4293-8cba-392958f24c50&station=s9600213&transport_types=plane&direction=на%20Москву';
+ 
+		$.ajax({
+		headers: { "Accept": "application/json"},
+		url:url,
+		dataType: 'json',
+		crossDomain: true,
+		method:'GET',
+		 beforeSend: function(xhr){
+                xhr.withCredentials = true;
+          },
+		success: function(data) {
+			console.log("fvdf");
+		 var res =  JSON.parse(data);
+			$('#result').text(res.best_offer);
+		   }
+		});
+		</script>
+	</div>
+</body>
+</html>
