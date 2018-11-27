@@ -29,9 +29,9 @@
 		$.ajax({
 		url:url,
 		success: function(data) {
-			console.log("fvdf");
+			console.log(data);
 		 var res =  JSON.parse(data);
-			$('#result').text(res.best_offer);
+			$('#result').text(res.name);
 		   }
 		});
 		</script>
