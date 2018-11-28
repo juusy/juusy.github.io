@@ -43,12 +43,12 @@
 				arrival_json = data;
 			}
 		});
-		PrintReis(departure_json, var str = "dep");
-		PrintReis(arrival_json, var str = "arr");
+		PrintReis(departure_json, 'dep');
+		PrintReis(arrival_json, 'arr');
 		
 		var PrintReis = function(json, time){
 			for (var i =0; i < json.schedule.length - 1; i++){
-				if (time == "dep") time = json.schedule[i].departure;
+				if (time == 'dep') time = json.schedule[i].departure;
 				else time = json.schedule[i].arrival;
 				var html_str = '<div class="item">'+
 					'<div class="time">'+
