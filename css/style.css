@@ -122,3 +122,6 @@ button:before {
     display: flex;
     padding: 20px 0px;
 }
+.item:hover{
+	box-shadow: 2px 2px 5px #dacdcd;
+}
