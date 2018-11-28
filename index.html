@@ -45,29 +45,19 @@
 			for (var i =0; i < json.schedule.length - 1; i++){
 				var html_str = '<div class="item">'+
 					'<div class="time">'+
-						'<div style="position: relative; height: 100%">'+
 							'<time>'+json.schedule[i].departure+'</time>'+
 					'</div>'+
-					'</div>'+
 					'<div class="city" role="cell">'+
-						'<div class="table-row__inner">'+
 							'<span class="flight-row__city-name">'+ json.schedule[i].thread.title +'</span>'+
-						'</div>'+
+					'</div>'+					
+					'<div class="number">'+
+								'<span>'+json.schedule[i].thread.number+'</span>'+
 					'</div>'+
-					
-					'<div class="table-row__cell flight-row__airline-cell" role="cell">'+
-						'<div _ngcontent-c43="" class="table-row__inner">'+
-							'<div _ngcontent-c43="" class="flight-row__airline">'+
-								'<span _ngcontent-c43="" class="flight-row__airline-name">'+json.schedule[i].thread.number+'</span>'+
-							'</div>'+
-							'<div _ngcontent-c43="" class="flight-row__airline flight-row__airline_child ng-star-inserted">'+
-								'<span _ngcontent-c43="" class="flight-row__airline-name">' + json.schedule[i].thread.carrier.title + '</span>'+
-								'<span _ngcontent-c43="" class="flight-row__airline-flight-number">' + json.schedule[i].thread.vehicle + '</span>'+
-							'</div>'+
-						'</div>'+
+					'<div class="airline-name">'+
+								'<span class="airline">' + json.schedule[i].thread.carrier.title + '</span>'+
+								'<span class="name">' + json.schedule[i].thread.vehicle + '</span>'+
 					'</div>'+
-				'</div>'+
-			'</div>';
+				'</div>';
 			$('#result').append(html_str);
 			}
 		}
