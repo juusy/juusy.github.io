@@ -37,18 +37,18 @@
 		var PrintReis = function(json){
 			for (var i =0; i < json.schedule.length - 1; i++){
 				var html_str = '<div class="item">'+
-					'<div class="flight-row__time-old loaded rescheduled ng-star-inserted">'+
+					'<div class="time">'+
 						'<div style="position: relative; height: 100%">'+
 							'<time>'+json.schedule[i].departure+'</time>'+
 					'</div>'+
 					'</div>'+
-					'<div class="table-row__cell table-row__primary-text flight-row__city" role="cell">'+
+					'<div class="city" role="cell">'+
 						'<div class="table-row__inner">'+
-							'<span _ngcontent-c43="" class="flight-row__city-name">'+ json.schedule[i].thread.title +'</span>'+
+							'<span class="flight-row__city-name">'+ json.schedule[i].thread.title +'</span>'+
 						'</div>'+
 					'</div>'+
 					
-					'<div _ngcontent-c43="" class="table-row__cell flight-row__airline-cell" role="cell">'+
+					'<div class="table-row__cell flight-row__airline-cell" role="cell">'+
 						'<div _ngcontent-c43="" class="table-row__inner">'+
 							'<div _ngcontent-c43="" class="flight-row__airline">'+
 								'<span _ngcontent-c43="" class="flight-row__airline-name">'+json.schedule[i].thread.number+'</span>'+
