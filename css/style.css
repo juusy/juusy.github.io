@@ -112,6 +112,9 @@ button:before {
 .menu a:hover:after {
     width: 50%;
 }
+#result{
+	transition: 1s;
+}
 .item div{
 	display: inline-block;
 }
