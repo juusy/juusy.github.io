@@ -32,8 +32,9 @@
 		<script type="text/javascript">
 		
 		var PrintReis = function(json, time){
+			var str;
 			for (var i =0; i < json.schedule.length - 1; i++){
-				if (time == 'dep') time = json.schedule[i].departure;
+				if (time === 'dep') time = json.schedule[i].departure;
 				else time = json.schedule[i].arrival;
 				var html_str = '<div class="item">'+
 					'<div class="time">'+
@@ -50,20 +51,23 @@
 								'<span class="name">"' + json.schedule[i].thread.vehicle + '"</span>'+
 					'</div>'+
 				'</div>';
-			$('#result').append(html_str);
+			 str +=html_str;
 			}
+			return html_str;
 		}
 		var departure_json, arrival_json;
 		$.ajax({
 			url:'plane.json',
 			success: function(data) {
-				PrintReis(data, 'dep');
+				var html_str = PrintReis(data, 'dep');
+				$('#result').append(html_str);
 			}
 		});
 		$.ajax({
 			url:'arrival.json',
 			success: function(data) {
-				PrintReis(data, 'arr');
+				var html_str = PrintReis(data, 'arr');
+				$('#result').append(html_str);
 			}
 		});
 		
@@ -74,7 +78,8 @@
 			$.ajax({
 				url:url,
 				success: function(data) {
-					PrintReis(data, 'dep');
+					var html_str = PrintReis(data, 'dep');
+					$('#result').html(html_str);
 				}
 			});
 		});
@@ -84,7 +89,8 @@
 			$.ajax({
 				url:url,
 				success: function(data) {
-					PrintReis(data, 'arr');
+					var html_str = PrintReis(data, 'arr');
+					$('#result').html(html_str);
 				}
 			});
 		});
