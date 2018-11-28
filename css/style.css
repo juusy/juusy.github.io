@@ -18,7 +18,7 @@ body{
 	width: 100%;
 	min-height: 100vh;
 	background: rgb(231,169,148);
-	background: linear-gradient(0deg, rgba(231,169,148,1) 21%, rgba(192,247,247,1) 100%);
+	background: linear-gradient(0deg, rgba(231,169,148,1) 61%, rgba(192,247,247,1) 100%);
 }
 .container{
 	width: 70%;
@@ -125,5 +125,5 @@ button:before {
 .item:hover{
 	box-shadow: 2px 2px 5px #dacdcd;
 	background: #fff;
-	opacity: 0.8;
+	opacity: 0.7;
 }
