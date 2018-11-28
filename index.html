@@ -30,28 +30,32 @@
 		</div>
 		</div>
 		<script type="text/javascript">
-		
-		var PrintReis = function(json, even){
-			var str, time;
-			for (var i =0; i < json.schedule.length - 1; i++){
-				if (even === 'dep') time = json.schedule[i].departure;
-				else time = json.schedule[i].arrival;
-				var html_str = '<div class="item">'+
+		var PrintOneReis = function(reis, even){
+			var time;
+			if (even === 'dep') time = reis.departure;
+				else time = reis.arrival;
+			var html_str = '<div class="item">'+
 					'<div class="time">'+
 							'<time>'+ time +'</time>'+
 					'</div>'+
 					'<div class="city">'+
-							'<span class="flight-row__city-name">'+ json.schedule[i].thread.title +'</span>'+
+							'<span class="flight-row__city-name">'+ reis.thread.title +'</span>'+
 					'</div>'+					
 					'<div class="number">'+
-								'<span>'+json.schedule[i].thread.number+'</span>'+
+								'<span>'+reis.thread.number+'</span>'+
 					'</div>'+
 					'<div class="airline-name">'+
-								'<span class="airline">' + json.schedule[i].thread.carrier.title + '</span><br>'+
-								'<span class="name">"' + json.schedule[i].thread.vehicle + '"</span>'+
+								'<span class="airline">' + reis.thread.carrier.title + '</span><br>'+
+								'<span class="name">"' + reis.thread.vehicle + '"</span>'+
 					'</div>'+
 				'</div>';
-			 str +=html_str;
+				return html_str;
+		};
+		var PrintReis = function(json, even){
+			var str;
+			for (var i =0; i < json.schedule.length - 1; i++){
+				var html_str = PrintOneReis(json.schedule[i], even)
+				str +=html_str;
 			}
 			return str;
 		}
@@ -100,15 +104,20 @@
 			var num = $('input[name="search"]').val();
 			if (num){
 				var result = arrival_json.schedule.filter(obj => obj.thread.number == num)[0];
+				if (result){
+					$('#result').html(PrintOneReis(result, 'arr'));
+				}
+				else{
+					var result = departure_json.schedule.filter(obj => obj.thread.number == num)[0];
+					if (result){
+						$('#result').html(PrintOneReis(result, 'dep'));
+					}
+					else
+						$('#result').html('<p>Рейса по заданному номеру не найдено</p>');
+				}
+					
 				console.log(result);
-				if (result.arrival == null)
-					$('#result').html(PrintReis(data, 'dep'));
-				else
-					$('#result').html(PrintReis(data, 'arr'));
-			}
-			else 
-				$('#result').html('<p>Рейса по заданному номеру не найдено</p>');
-			console.log(result); 
+			}				
 		});
 		</script>
 	</div>
