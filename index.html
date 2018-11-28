@@ -11,11 +11,11 @@
 <body>
 	<div class="wrapper">
 		<div class="container">
-			<h1 class="h1">Табло аэропорта</h1>
+			<a href="/"><h1 class="h1">Табло аэропорта</h1></a>
 		<div class="menu">
 		<div class="search">
 			<input type="text" name="search" placeholder="Поиск по номеру рейса"> 
-			<button type="submit"></button>
+			<button type="submit" id="search"></button>
 			</div>
 			<a href="#" id="departure">Вылетающие рейсы</a>
 			<a href="#" id="arrival">Прилетающие рейсы</a>
@@ -31,10 +31,10 @@
 		</div>
 		<script type="text/javascript">
 		
-		var PrintReis = function(json, time){
-			var str;
+		var PrintReis = function(json, even){
+			var str, time;
 			for (var i =0; i < json.schedule.length - 1; i++){
-				if (time === 'dep') time = json.schedule[i].departure;
+				if (even === 'dep') time = json.schedule[i].departure;
 				else time = json.schedule[i].arrival;
 				var html_str = '<div class="item">'+
 					'<div class="time">'+
@@ -61,6 +61,7 @@
 			success: function(data) {
 				var html_str = PrintReis(data, 'dep');
 				$('#result').append(html_str);
+				departure_json = data;
 			}
 		});
 		$.ajax({
@@ -68,6 +69,7 @@
 			success: function(data) {
 				var html_str = PrintReis(data, 'arr');
 				$('#result').append(html_str);
+				arrival_json = data;
 			}
 		});
 		
@@ -92,6 +94,11 @@
 					var html_str = PrintReis(data, 'arr');
 					$('#result').html(html_str);
 				}
+			});
+		});
+		$('#search').click(function(){
+			var result = arrival_json.schedule.filter(obj => obj. === 'QS 1198')[0]; 
+			console.log(result); 
 			});
 		});
 		</script>
