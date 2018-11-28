@@ -17,8 +17,8 @@
 			<input type="text" name="search" placeholder="Поиск по номеру рейса"> 
 			<button type="submit"></button>
 			</div>
-			<a href="#">Вылетающие рейсы</a>
-			<a href="#">Прилетающие рейсы</a>
+			<a href="#" id="departure">Вылетающие рейсы</a>
+			<a href="#" id="arrival">Прилетающие рейсы</a>
 		</div>
 		<div class="header-result">
 			<div class="time">Время прибытия/отправления</div>
@@ -40,11 +40,11 @@
 			//$('#result').text(data);
 		   }
 		});
-		var PrintReis = function(json){
+		var PrintReis = function(json, time){
 			for (var i =0; i < json.schedule.length - 1; i++){
 				var html_str = '<div class="item">'+
 					'<div class="time">'+
-							'<time>'+json.schedule[i].departure+'</time>'+
+							'<time>'+ time +'</time>'+
 					'</div>'+
 					'<div class="city">'+
 							'<span class="flight-row__city-name">'+ json.schedule[i].thread.title +'</span>'+
@@ -60,6 +60,26 @@
 			$('#result').append(html_str);
 			}
 		}
+		$('#departure').click(function(){
+			var url1 = 'https://api.rasp.yandex.net/v3.0/schedule/?apikey=d9f48ede-1554-4293-8cba-392958f24c50&station=s9600213&format=json&date=2018-11-28&transport_types=plane&direction=%D0%BD%D0%B0%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D1%83&event=departure';
+			var url = 'plane.json';
+			$.ajax({
+				url:url,
+				success: function(data) {
+					PrintReis(data, json.schedule[i].departure);
+				}
+			});
+		});
+		$('#departure').click(function(){
+			var url1 = 'https://api.rasp.yandex.net/v3.0/schedule/?apikey=d9f48ede-1554-4293-8cba-392958f24c50&station=s9600213&format=json&date=2018-11-28&transport_types=plane&direction=%D0%BD%D0%B0%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D1%83&event=arrival';
+			var url = 'arrival.json';
+			$.ajax({
+				url:url,
+				success: function(data) {
+					PrintReis(data, json.schedule[i].arrival);
+				}
+			});
+		});
 		</script>
 	</div>
 </body>
