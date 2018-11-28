@@ -56,7 +56,7 @@
 		//Отображение рейсов
 		var PrintReis = function(json, even){
 			var str;
-			for (var i =1; i < json.schedule.length; i++){
+			for (var i =0; i < json.schedule.length; i++){
 				var html_str = PrintOneReis(json.schedule[i], even);
 				str +=html_str;
 			}
