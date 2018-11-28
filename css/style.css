@@ -134,6 +134,7 @@ button:before {
 .header-result div{
 	display: inline-block;
 	color: #ad6e58;
+	padding: 5px 0;
 }
 .time{
 	width: 200px;
@@ -142,8 +143,8 @@ button:before {
 	width: 260px;
 }
 .number{
-	width: 80px;
+	width: 110px;
 }
-.airline{
+/*.airline-name{
 	width: 200px;
-}
+}*/
