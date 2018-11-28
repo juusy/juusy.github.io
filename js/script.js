@@ -29,7 +29,7 @@ var PrintOneReis = function(reis, even){
 		}
 		var departure_json, arrival_json;
 		$.ajax({
-			url:'json/departure.json',
+			url:'/json/departure.json',
 			success: function(data) {
 				var html_str = PrintReis(data, 'dep');
 				$('#result').append(html_str);
@@ -37,7 +37,7 @@ var PrintOneReis = function(reis, even){
 			}
 		});
 		$.ajax({
-			url:'json/arrival.json',
+			url:'/json/arrival.json',
 			success: function(data) {
 				var html_str = PrintReis(data, 'arr');
 				$('#result').append(html_str);
@@ -48,7 +48,7 @@ var PrintOneReis = function(reis, even){
 		
 		$('#departure').click(function(){
 			var url1 = 'https://api.rasp.yandex.net/v3.0/schedule/?apikey=d9f48ede-1554-4293-8cba-392958f24c50&station=s9600213&format=json&date=2018-11-28&transport_types=plane&direction=%D0%BD%D0%B0%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D1%83&event=departure';
-			var url = 'json/departure.json';
+			var url = '/json/departure.json';
 			$.ajax({
 				url:url,
 				success: function(data) {
@@ -59,7 +59,7 @@ var PrintOneReis = function(reis, even){
 		});
 		$('#arrival').click(function(){
 			var url1 = 'https://api.rasp.yandex.net/v3.0/schedule/?apikey=d9f48ede-1554-4293-8cba-392958f24c50&station=s9600213&format=json&date=2018-11-28&transport_types=plane&direction=%D0%BD%D0%B0%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D1%83&event=arrival';
-			var url = 'json/arrival.json';
+			var url = '/json/arrival.json';
 			$.ajax({
 				url:url,
 				success: function(data) {
