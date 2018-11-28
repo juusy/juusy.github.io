@@ -43,8 +43,8 @@
 				arrival_json = data;
 			}
 		});
-		PrintReis(departure_json, "dep");
-		PrintReis(arrival_json, "arr");
+		PrintReis(departure_json, var str = "dep");
+		PrintReis(arrival_json, var str = "arr");
 		
 		var PrintReis = function(json, time){
 			for (var i =0; i < json.schedule.length - 1; i++){
