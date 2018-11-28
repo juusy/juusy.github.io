@@ -22,10 +22,10 @@
 		</div>
 		<div class="header-result">
 			<div class="time">Время прибытия/отправления</div>
-			<div>Направление</div>
-			<div>Номер рейса</div>
-			<div>Авиакомпания</div>
-			<div>Название транспортного средства</div>
+			<div class="city">Направление</div>
+			<div class="number">Номер рейса</div>
+			<div class="airline">Авиакомпания</div>
+			<div class="name">Название транспортного средства</div>
 		</div>
 		<div id="result">
 		</div>
@@ -47,7 +47,7 @@
 					'<div class="time">'+
 							'<time>'+json.schedule[i].departure+'</time>'+
 					'</div>'+
-					'<div class="city" role="cell">'+
+					'<div class="city">'+
 							'<span class="flight-row__city-name">'+ json.schedule[i].thread.title +'</span>'+
 					'</div>'+					
 					'<div class="number">'+
