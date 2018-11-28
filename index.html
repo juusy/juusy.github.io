@@ -97,7 +97,16 @@
 			});
 		});
 		$('#search').click(function(){
-			var result = arrival_json.schedule.filter(obj => obj.thread.number == 'QS 1198')[0]; 
+			var num = $('input[name="search"]').value();
+			if (num){
+				var result = arrival_json.schedule.filter(obj => obj.thread.number == num)[0];
+				if (result.arrival == null)
+					$('#result').html(PrintReis(data, 'dep'));
+				else
+					$('#result').html(PrintReis(data, 'arr'));
+			}
+			else 
+				$('#result').html('<p>Рейса по заданному номеру не найдено</p>');
 			console.log(result); 
 		});
 		</script>
