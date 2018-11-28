@@ -22,7 +22,7 @@ body{
 }
 .container{
 	width: 70%;
-	height: 100%;
+	min-height: 100vh;
 	margin: 0 auto;
     background-color: #ffffffb3;
     /*opacity: 0.7;*/
