@@ -30,6 +30,21 @@
 		</div>
 		</div>
 		<script type="text/javascript">
+		var departure_json, arrival_json;
+		$.ajax({
+			url:'plane.json';
+			success: function(data) {
+				departure_json = data;
+			}
+		});
+		$.ajax({
+			url:'arrival.json';
+			success: function(data) {
+				arrival_json = data;
+			}
+		});
+		PrintReis(departure_json, departure_json.schedule[i].departure);
+		PrintReis(arrival_json, arrival_json.schedule[i].departure);
 		
 		var PrintReis = function(json, time){
 			for (var i =0; i < json.schedule.length - 1; i++){
@@ -57,17 +72,17 @@
 			$.ajax({
 				url:url,
 				success: function(data) {
-					PrintReis(data, json.schedule[i].departure);
+					PrintReis(data, data.schedule[i].departure);
 				}
 			});
 		});
-		$('#departure').click(function(){
+		$('#arrival').click(function(){
 			var url1 = 'https://api.rasp.yandex.net/v3.0/schedule/?apikey=d9f48ede-1554-4293-8cba-392958f24c50&station=s9600213&format=json&date=2018-11-28&transport_types=plane&direction=%D0%BD%D0%B0%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D1%83&event=arrival';
 			var url = 'arrival.json';
 			$.ajax({
 				url:url,
 				success: function(data) {
-					PrintReis(data, json.schedule[i].arrival);
+					PrintReis(data, data.schedule[i].arrival);
 				}
 			});
 		});
