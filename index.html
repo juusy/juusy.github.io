@@ -100,7 +100,7 @@
 			var num = $('input[name="search"]').val();
 			if (num){
 				var result = arrival_json.schedule.filter(obj => obj.thread.number == num)[0];
-				console.log(result.arrival);
+				console.log(result);
 				if (result.arrival == null)
 					$('#result').html(PrintReis(data, 'dep'));
 				else
