@@ -44,8 +44,9 @@
 		$.get({
 			url:'tab1.html',
 			success: function(data) {
-				var h1 = data.find('h1').text;
+				
 				console.log(data);
+				var h1 = data.find('h1').text;
 				$('#tab1 .title').html(h1);
 			}
 		});
