@@ -46,7 +46,7 @@
 			success: function(data) {
 				
 				console.log(data);
-				var h1 = data.querySelector('h1');
+				var h1 = data.getElementsByTagName('h1');
 				$('#tab1 .title').html(h1);
 			}
 		});
