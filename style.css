@@ -33,7 +33,9 @@
     border-left: 0;
     border-top: 0;
 }
-
+.tabs label:hover{
+	background-color: rgba(255, 255, 255, 0.6);
+}
 .tabs input {
 	position: absolute;
 	left: -9999px;
