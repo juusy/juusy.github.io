@@ -69,6 +69,7 @@
     background-color: #e4dbd7;
     border: 1px solid #b9b5b5;
     padding: 7px;
+    width: 250px;
 }
 .tab button:hover{
 	background-color: rgb(228, 219, 215, 0.6);
