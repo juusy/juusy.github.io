@@ -53,11 +53,26 @@
 	background: rgb(255, 255, 255, 1);
 	position: relative;
 	z-index: 2;
-	height: 232px;
+	min-height: 232px;
 	/*border-radius: 0 0 10px 10px;*/
 	padding: 8px;
 	border-top: 1px solid #b9b5b5;
 	top: -2px;
+}
+.tab{
+	position: relative;
+    min-height: 232px;
+}
+.tab button{
+	position: absolute;
+    bottom: 20px;
+    background-color: #e4dbd7;
+    border: 1px solid #b9b5b5;
+    padding: 7px;
+}
+.tab button:hover{
+	background-color: rgb(228, 219, 215, 0.6);
+	box-shadow: 1px 2px 6px 0px #403d3d4d;
 }
 .text_tabs > div {
 	position: absolute;
