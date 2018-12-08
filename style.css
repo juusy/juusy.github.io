@@ -99,3 +99,6 @@
     display: block;
     margin: 10px 0 10px 0;
 }
+.tab .content{
+	margin-bottom: 60px;
+}
