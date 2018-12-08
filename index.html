@@ -30,26 +30,30 @@
 					<div class="content">
 						оаимдыувлраыдуваоыдувалт
 					</div>
-					<button onclick="ChangeColor(tab2)">Изменить цвет текста на красный</button>
+					<button onclick="ChangeColor(color1, '#tab2')">Изменить цвет текста на красный</button>
 				</div>
 				<div id="tab3" class="tab">
 					<span class="title"></span>
 					<div class="content">
 						ыорпмоьрсJhvkmnHvkh
 					</div>
-					<button onclick="ChangeColor(tab3)">Изменить цвет текста на красный</button>
+					<button onclick="ChangeColor(color2, '#tab3')">Изменить цвет текста на красный</button>
 				</div>
 			</div>
 		</div>
 	</div>
 	<script type="text/javascript">
-		var tab2 = false, tab3 = false;
-		function ChangeColor(bool_color){
+		var color1 = false, color2 = false;
+		function ChangeColor(bool_color, id){
 			if (bool_color){
-				$('#'+ bool_color).css('color','black');
+				$(id).css('color','black');
+				bool_color = false;
 			}
-			else $('#'+ bool_color).css('color','red');
-		}; 
+			else{
+				$(id).css('color','red');
+				bool_color = true;
+			}
+		} 
 		$.ajax({
 			url:'tab1.html',
 			success: function(data) {
