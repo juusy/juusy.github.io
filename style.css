@@ -93,3 +93,9 @@
 	left: 0;
 	opacity: 1;
 }
+.title{
+	font-size: 22px;
+    color: #b5958a;
+    display: block;
+    margin: 10px 0 10px 0;
+}
