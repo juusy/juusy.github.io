@@ -62,7 +62,7 @@
 			success: function(data) {
 				
 				console.log(data);
-				var h1 = $(data).find('#h1').text();
+				var h1 = $(data).filter('h1').text();
 				console.log(h1);
 				$('#tab1 .title').html(h1);
 			}
