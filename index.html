@@ -46,9 +46,9 @@
 		var tab2 = false, tab3 = false;
 		function ChangeColor(bool_color){
 			if (bool_color){
-				$(bool_color).css('color','black');
+				$('#'+ bool_color).css('color','black');
 			}
-			else $(bool_color).css('color','red');
+			else $('#'+ bool_color).css('color','red');
 		}; 
 		$.ajax({
 			url:'tab1.html',
