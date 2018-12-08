@@ -47,13 +47,13 @@
 		function ChangeColor(obj){
 			if (obj.color){
 				$(obj.id).css('color','#000');
-				$(obj.id+button).text('Изменить цвет текста на красный');
+				$(obj.id+'button').text('Изменить цвет текста на красный');
 				obj.color = false;
 
 			}
 			else{
 				$(obj.id).css('color','red');
-				$(obj.id+button).text('Изменить цвет текста на черный');
+				$(obj.id+'button').text('Изменить цвет текста на черный');
 				obj.color = true;
 			}
 		} 
