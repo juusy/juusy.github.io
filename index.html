@@ -46,13 +46,14 @@
 		var color1 = false, color2 = false;
 		function ChangeColor(bool_color, id){
 			if (bool_color){
-				$(id).css('color','black');
+				$(id).css('color','#000');
 				bool_color = false;
 			}
 			else{
 				$(id).css('color','red');
 				bool_color = true;
 			}
+			console.log(color1+' '+color2);
 		} 
 		$.ajax({
 			url:'tab1.html',
