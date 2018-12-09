@@ -1,5 +1,16 @@
 @import url("reset.css");
 
+@font-face{
+
+font-family: 'AlegreyaSans-Light';
+src: url('../fonts/AlegreyaSans-Light.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+
+}
+html, body, button, input{
+	font-family: AlegreyaSans-Light;
+}
 .wrapper{
 	background: rgb(231,169,148);
     background: linear-gradient(0deg, rgb(233, 208, 200) 21%, rgb(221, 233, 233) 100%);
