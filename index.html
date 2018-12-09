@@ -40,10 +40,12 @@
 		</div>
 	</div>
 	<script type="text/javascript">
+		//Объявляем обекты наших табов с параметрами id и url, используемыми при загрузке контента и изменения свойств css и color, который тоже используется для определения на какой цвет необходимо изменить цвет текста при нажатии на кнопку
 		var tabs = [{"id" : "#tab1", "url" : "content/tab1.html"},
 					{"color" : false, "id" : "#tab2", "url" : "content/tab2.html"}, 
 					{"color" : false, "id" : "#tab3", "url" : "content/tab3.html"}];
 		
+		//меняем цвет текста и надпись на кнопке
 		function ChangeColor(obj){
 			if (obj.color){
 				$(obj.id).css('color','#000');
@@ -58,6 +60,7 @@
 			}
 		} 
 
+		//загружаем тект в наши табы
 		function LoadText(obj_tab){
 			$.ajax({
 				url: obj_tab.url,
@@ -69,6 +72,7 @@
 				}
 			});
 		}
+		//после загрузки страницы вызываем функцию подгрузки контента для наших табов
 		$(function() {
 			for (let i = 0; i < 3; i++){
 				LoadText(tabs[i]);
